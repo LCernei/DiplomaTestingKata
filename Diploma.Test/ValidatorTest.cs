@@ -20,7 +20,7 @@ namespace Diploma.Test
         }
         
         [Fact]
-        public void ValidateStudentRecord_No_ReturnsFalse()
+        public void ValidateStudentRecord_NoGrades_ReturnsFalse()
         {
             var obj = new Validator();
             var studentModel = new StudentModel {FirstName = "Ion", LastName = "Ion"};
