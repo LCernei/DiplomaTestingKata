@@ -1,10 +1,7 @@
-﻿using System.Security.Cryptography;
-using Diploma.Models;
-using Diploma.Utils;
+﻿using Diploma.Utils;
 using Diploma.Wrappers;
 using FluentAssertions;
 using Moq;
-using OfficeOpenXml.FormulaParsing.Excel.Functions.Math;
 using Xunit;
 
 namespace Diploma.Test
