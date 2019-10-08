@@ -7,13 +7,13 @@ namespace Diploma.Validators
     {
         public bool ValidateStudentRecord(StudentModel student)
         {
-            if (string.IsNullOrEmpty(student.FirstName) || string.IsNullOrEmpty(student.LastName))
+            if (String.IsNullOrEmpty(student.FirstName) || String.IsNullOrEmpty(student.LastName))
             {
                 return false;
             }
             foreach (var subject in student.Grades)
             {
-                if (string.IsNullOrEmpty(subject.SubjectName) || subject.Grade <= 0 || subject.Grade > 10)
+                if (String.IsNullOrEmpty(subject.SubjectName) || subject.Grade <= 0 || subject.Grade > 10)
                 {
                     return false;
                 }
