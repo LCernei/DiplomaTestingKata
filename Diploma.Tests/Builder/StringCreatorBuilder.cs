@@ -9,30 +9,30 @@ namespace Diploma.Tests.Builder
 {
     public class StringCreatorBuilder
     {
-        private IConstants constants;
-        private IDomainWrapper domainWrapper;
+        private IConstants _constants;
+        private IDomainWrapper _domainWrapper;
 
         public StringCreatorBuilder()
         {
-            this.constants = Substitute.For<IConstants>();
-            this.domainWrapper = Substitute.For<IDomainWrapper>();
+            this._constants = Substitute.For<IConstants>();
+            this._domainWrapper = Substitute.For<IDomainWrapper>();
         }
 
         public StringCreatorBuilder WithConstants(IConstants constants)
         {
-            this.constants = constants;
+            this._constants = constants;
             return this;
         }
 
         public StringCreatorBuilder WithDomainWrapper(IDomainWrapper domainWrapper)
         {
-            this.domainWrapper = domainWrapper;
+            this._domainWrapper = domainWrapper;
             return this;
         }
 
         public StringCreator Build()
         {
-            return new StringCreator(constants, domainWrapper);
+            return new StringCreator(_constants, _domainWrapper);
         }
     }
 }

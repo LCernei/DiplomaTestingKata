@@ -8,46 +8,46 @@ namespace Diploma.Tests.Builder
 {
     public class StudentDataProcessorBuilder
     {
-        private IFileReader fileReader;
-        private ICustomMapper mapper;
-        private IFileWriter fileWriter;
-        private IValidator validator;
+        private IFileReader _fileReader;
+        private ICustomMapper _mapper;
+        private IFileWriter _fileWriter;
+        private IValidator _validator;
 
         public StudentDataProcessorBuilder()
         {
-            this.fileReader = Substitute.For<IFileReader>();
-            this.mapper = Substitute.For<ICustomMapper>();
-            this.fileWriter = Substitute.For<IFileWriter>();
-            this.validator = Substitute.For<IValidator>();
+            this._fileReader = Substitute.For<IFileReader>();
+            this._mapper = Substitute.For<ICustomMapper>();
+            this._fileWriter = Substitute.For<IFileWriter>();
+            this._validator = Substitute.For<IValidator>();
         }
 
         public StudentDataProcessorBuilder WithFileReader(IFileReader fileReader)
         {
-            this.fileReader = fileReader;
+            this._fileReader = fileReader;
             return this;
         }
 
         public StudentDataProcessorBuilder WithMapper(ICustomMapper mapper)
         {
-            this.mapper = mapper;
+            this._mapper = mapper;
             return this;
         }
 
-        public StudentDataProcessorBuilder WithFileWritter(IFileWriter fileWriter)
+        public StudentDataProcessorBuilder WithFileWriter(IFileWriter fileWriter)
         {
-            this.fileWriter = fileWriter;
+            this._fileWriter = fileWriter;
             return this;
         }
 
         public StudentDataProcessorBuilder WithValidator(IValidator validator)
         {
-            this.validator = validator;
+            this._validator = validator;
             return this;
         }
 
         public StudentDataProcessor Build()
         {
-            return new StudentDataProcessor(fileReader, mapper, fileWriter, validator);
+            return new StudentDataProcessor(_fileReader, _mapper, _fileWriter, _validator);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Diploma.Tests.UnitTests
         [Fact]
         public void CollectData_CallsLoadData_OneTimeWithEnter()
         {
-            var path = "path";
+            const string path = "path";
             var consoleWrapper = Substitute.For<IConsoleWrapper>();
             consoleWrapper.ReadLine().Returns(path);
             consoleWrapper.ReadKey().Returns(new ConsoleKeyInfo('\n', ConsoleKey.Enter, false, false, false));
@@ -33,7 +33,7 @@ namespace Diploma.Tests.UnitTests
         [Fact]
         public void CollectData_DoesNotCallLoadData_WithoutKey()
         {
-            var path = "path";
+            const string path = "path";
             var consoleWrapper = Substitute.For<IConsoleWrapper>();
             consoleWrapper.ReadLine().Returns(path);
 

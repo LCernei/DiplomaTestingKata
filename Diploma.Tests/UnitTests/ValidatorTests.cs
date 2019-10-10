@@ -11,7 +11,7 @@ namespace Diploma.Tests.UnitTests
     public class ValidatorTests
     {
         [Theory]
-        [InlineData(null, "secondname")]
+        [InlineData(null, "lastname")]
         [InlineData("firstname", "")]
         public void ValidateStudentRecord_ReturnsFalse_WithInvalidName(string firstName, string lastName)
         {
