@@ -25,7 +25,7 @@ namespace Diploma.Tests.UnitTests
         public void LoadData_CallsMapToStudent_WithStudentsFromImportData()
         {
             string path = "path";
-            var students = new List<StudentRawModel>() { new StudentRawModel()};
+            var students = new List<StudentRawModel>() { new StudentRawModel() };
             var fileReader = Substitute.For<IFileReader>();
             fileReader.ImportData(path).Returns(students);
 
