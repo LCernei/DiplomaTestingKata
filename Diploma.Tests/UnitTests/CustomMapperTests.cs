@@ -2,13 +2,14 @@
 using Diploma.Models;
 using Diploma.Utils;
 using Xunit;
+using FluentAssertions;
 
 namespace Diploma.Tests.UnitTests
 {
     public class CustomMapperTests
     {
         [Fact]
-        public void MapToStudent_()
+        public void MapToStudent_ReturnsCorrectList_WithValidData()
         {
             var studentRawModel = new StudentRawModel
             {
@@ -49,7 +50,7 @@ namespace Diploma.Tests.UnitTests
 
             var actual = sut.MapToStudent(rawModels);
             
-            Assert.Equal(expected, actual);
+            actual.Should().BeEquivalentTo(expected);
         }
     }
 }
